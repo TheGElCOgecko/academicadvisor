@@ -17,6 +17,7 @@ document.getElementById('major-select').addEventListener('change', function(e) {
         <h5>Marketability:</h5>
         <p>${major.marketability}</p>
     `;
+    document.getElementById('schedule-details').innerHTML = ``
     updateMajorTopics(majorKey);
     populateCoursesList(majorKey);
 });
