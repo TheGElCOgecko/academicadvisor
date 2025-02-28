@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Academic Advisor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Academic Advisor</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarOptions">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarOptions">
+                <ul class="navbar-nav">
+                    <li class="nav-item"> <a class="nav-link" href="#select-major">Select Major</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#major-topics">Major Topics</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#semester-schedule">Semester Schedule</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#financial-aid">Financial Aid</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#contact">Contact</a> </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Select major section -->
+    <section id="select-major" class="section bg-light">
+        <div class="container">
+            <h2 class="mb-4">Select your major</h2>
+            <div class="mb-3">
+                <label for="major-select" class="form-label">Choose a major:</label>
+                <select class="form-select" id="major-select">
+                    <option value="" disabled selected>Select your major</option>
+                    <option value="biology">Biology</option>
+                    <option value="business">Business</option>
+                    <option value="computer_science">Computer Science</option>
+                    <option value="electrical_engineering">Electrical Engineering</option>
+                    <option value="history">History</option>
+                    <option value="philosophy">Philosophy</option>
+                    <option value="psychology">Psychology</option>
+                </select>
+            </div>
+            <div id="major-details" class="mt-4"></div>
+        </div>
+    </section>
+
+    <!-- Major topic description section -->
+    <section id="major-topics" class="section">
+        <div class="container">
+            <h2 class="mb-4">Major topics</h2>
+            <div id="major-topics-details">
+                <p>Select a major in the "Select your major" section to view major topics.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Semester schedule section -->
+    <section id="semester-schedule" class="section bg-light">
+        <div class="container">
+            <h2>Set up semester schedule</h2>
+            <h6 class="mb-4">Use this section to get a suggested schedule for a major's core classes next semester.</h6>
+            <form id="schedule-form">
+                <div class="mb-3">
+                    <label for="courses-next-semester" class="form-label">Select number of courses that you would like to dedicate to this major next semester:</label>
+                    <input type="number" class="form-control" id="courses-next-semester" min="1" max="6" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Select completed courses:</label>
+                    <div id="courses-container" class="course-list">
+                        <p>Select a major in the "Select your major" section to view a suggested semester schedule.</p>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Generate schedule</button>
+            </form>
+            <div id="schedule-details" class="mt-4"></div>
+        </div>
+    </section>
+
+    <!-- Financial aid section -->
+    <section id="financial-aid" class="section">
+        <div class="container">
+            <h2 class="mb-4">Financial aid assistance</h2>
+            <p>Find information about available financial aid options, scholarships, and eligibility criteria.</p>
+            <ul>
+                <li>Scholarships and grants</li>
+                <li>FAFSA</li>
+                <li>Student loans</li>
+                <li>Work-study programs</li>
+            </ul>
+            <p>For personalized assistance, please contact the financial aid office, using the form below.</p>
+        </div>
+    </section>
+
+    <!-- Contact section -->
+    <section id="contact" class="section bg-light">
+        <div class="container">
+            <h2 class="mb-4">Contact Us</h2>
+            <form id="contact-form">
+                <div class="mb-3">
+                    <label for="contact-name" class="form-label">Name:</label>
+                    <input type="text" class="form-control" id="contact-name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="contact-email" class="form-label">Email:</label>
+                    <input type="email" class="form-control" id="contact-email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="contact-message" class="form-label">Message:</label>
+                    <textarea class="form-control" id="contact-message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+            <div id="contact-success" class="mt-2 text-success" style="display: none;">
+                Your message has been sent successfully!
+            </div>
+        </div>
+    </section>
+
+    <script src="data.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
